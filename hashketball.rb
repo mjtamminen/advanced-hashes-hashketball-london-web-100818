@@ -1,5 +1,3 @@
-require "pry"
-
 def game_hash
   {
     home: {
@@ -174,14 +172,14 @@ def player_stats(player_name)
 end
 
 def big_shoe_rebounds
-  biggest = 0
+  biggest_shoe = 0
   rebounds = 0
   game_hash.each do |location, team_data|
     players = team_data[:players]
     players.each do |player, player_data|
       shoe_size = player_data[:shoe]
-      if biggest == 0 ||biggest < shoe_size
-        biggest = shoe_size
+      if biggest_shoe == 0 ||biggest_shoe < shoe_size
+        biggest_shoe = shoe_size
         rebounds = player_data[:rebounds]
       end
     end
